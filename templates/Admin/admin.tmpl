@@ -1,0 +1,32 @@
+{{define "admin"}}
+{{template "header"}}
+{{template "side"}}
+<div class="col-md-9" role="main">
+  <div class="btn-group btn-group-vertical">
+	<a href="/admin/login/"><button class="btn btn-primary btn-lg dropdown-toggle" type="button">
+	  管理员登录
+	</button></a>
+	<a href="/admin/search/"><button class="btn btn-primary btn-lg dropdown-toggle" type="button">
+	  管理员搜索（修改，删除库存信息）
+	</button></a>
+	<a href="/admin/list/"><button class="btn btn-primary btn-lg dropdown-toggle" type="button">
+	  列出全部书目
+	</button></a>
+	<a href="/admin/add/"><button class="btn btn-primary btn-lg dropdown-toggle" type="button">
+	  添加书目
+	</button></a>
+  </div>
+</div>
+
+<br /> <br /> <br /> <br /> <br /> <br />
+<br/>        <br/>        <br/>        <br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+{{template "divfooter"}}
+{{template "footer"}}
+{{end}}

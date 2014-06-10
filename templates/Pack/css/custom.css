@@ -1,0 +1,27 @@
+#fangliang{
+	font-weight:bold;
+	/* background-color:#AFEEEE; */
+	border-bottom-style:none;
+}
+
+
+#overview {
+	padding-left:-70px;
+	padding-top:100px;
+	padding-bottom:80px;
+	background-color:#563d7c;
+}
+#big-header>p{
+	color:white;
+	font-weight:bold;
+	font-size:x-large;
+}
+#big-header>h1{
+	color:white;
+	font-weight:bold;
+	font-size:xx-large;
+}
+
+/* .function{ */
+/* 	float:right; */
+/* } */

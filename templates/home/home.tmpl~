@@ -1,0 +1,20 @@
+{{define "home"}}
+{{template "header"}}
+<h2>Hello User: {{.Who}}</h2>
+<p>你借了 {{.Num}} 本书：<p>
+ <ol>
+{{if .N}}
+	{{range $idx,$bookid := .Book}}
+	  <form method="post"  action="goreturn/">
+		<label for="Bookid">{{$bookid}}</label>
+		<label for="Bookname">{{index $.BookName $idx}}</label>
+		<input type="submit" name="borrow" value="还书" >
+		<input type="hidden" name="bookid" value={{$bookid}}>
+		<input type="hidden" name="bookname" value={{index $.BookName $idx}}>
+	  </form>
+	{{end}}
+{{end}}
+ </ol>
+<a href="logout/"></a>  <!-- user logout -->
+{{template "footer"}}
+{{end}}

@@ -1,0 +1,39 @@
+{{define "user_borrow"}}
+{{template "header"}}
+{{template "side"}}
+<div class="col-md-9" role="main">
+  <div class="panel panel-success">
+	<div class="panel-heading">
+	  <h2 class="panel-title">搜索结果</h2>
+	</div>
+	<br /><br />
+	<div class="panel-body">
+	  <div class="alert alert-warning"><p id="reply"></p></div>
+	  {{range .}}
+		<form method="post" id={{.Bookid}} action="goborrow/"  role="form" class="form-inline ajax">
+		  <div class="form-group">
+			<label for="bn">书名：</label>
+			<label for="Bookname">{{.Bookname}}</label>
+		  </div>
+		  <div class="form-group">
+			<label for="bid">书ID：</label>
+			<label for="Bookname">{{.Bookid}}</label>
+		  </div>
+		  <div class="form-group">
+			<label for="bs">剩余：</label>
+			<label for="bs">{{.Left_num}}</label>
+		  </div>
+		  <p>
+			<input type="submit"  id={{.Bookid}} value="租借" class="btn btn-primary">
+			<span  id={{.Bookid}}></span></p>
+		  <input type="hidden" name="bookname" value={{.Bookname}} >
+		  <input type="hidden" name="bookid" value={{.Bookid}} >
+		  <input type="hidden" name="left_name" value={{.Left_num}} >
+		</form>
+	  {{end}}
+	</div>
+  </div>
+</div>
+{{template "divfooter"}}
+{{template "footer"}}
+{{end}}

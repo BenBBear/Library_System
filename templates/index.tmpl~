@@ -1,0 +1,12 @@
+{{define "index"}}
+{{template "header"}}
+	<ul>
+      <li><a href="signup/">注册</a></li>
+	  <li><a href="user_login/">用户登录</a></li>
+	  <li><a href="logout/">注销</a></li>
+	  <li><a href="home/">用户主页</a></li>
+	  <li><a href="admin/">管理员页面</a></li>
+	</ul>
+
+{{template "footer"}}
+{{end}}

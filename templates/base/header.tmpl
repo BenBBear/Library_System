@@ -1,0 +1,109 @@
+{{define "header"}}
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <title>简易的图书馆管理系统</title>
+	<!-- 最新 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
+	<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap-theme.min.css">
+	<style type="text/css" media="screen">
+	 #fangliang{
+	   font-weight:bold;
+	   /* background-color:#AFEEEE; */
+	   border-bottom-style:none;
+	 }
+	 #overview {
+	   padding-left:-70px;
+	   padding-top:100px;
+	   padding-bottom:80px;
+	   background-color:#563d7c;
+	 }
+	 #big-header>p{
+	   color:white;
+	   font-weight:bold;
+	   font-size:x-large;
+	 }
+	 #big-header>h1{
+	   color:white;
+	   font-weight:bold;
+	   font-size:xx-large;
+	 }
+	</style>
+  </head>
+  <body>
+
+
+	<header class="navbar navbar-inverse navbar-fixed-top" id="fangliang">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">简易的图书馆管理系统</a>
+        </div>
+        <nav class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="/"><i class="icon-home">主页</i></a>
+            </li>
+            <li>
+              <a href="mailto:beviszhang1993@gmail.com?Subject=反馈BUG">反馈BUG</a>
+            </li>
+			<li>
+              <a href="#" data-toggle="modal" data-target="#introduction">介绍</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                相关链接 <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="www.golang.org">Go语言</a></li>
+                <li><a href="https://github.com/go-martini/martini">Golang Martini网络框架</a></li>
+                <li><a href="jquery.com/">Jquery库</a></li>
+				<li><a href="getbootstrap.com">Bootstrap3</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+	<div class="modal fade" id="introduction" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h4 class="modal-title" id="myModalLabel">功能介绍</h4>
+		  </div>
+		  <div class="modal-body">
+			<p>
+			  这个小网站提供了用户注册，用户登录，注销，拥有个人主页，并搜书，借书，还书功能。也可以匿名搜索书籍。还具有一个管理员登录功能，
+			  管理员可以进入管理员页面，来增加，删除，修改书籍。
+			</p>
+			<h4>特点</h4>
+			<ol>
+			  <li>后台全部使用类C语言的系统级语言Go语言写成，性能很高，并且具有>=Node.js的并发性。
+				Go语言很年轻，从无到有只经历了4年，由Google设计推出</li>
+			  <li>使用Postgres数据库</li>
+			  <li>前端使用Bootstrap 3作为UI框架，并使用了jquery插件，并且主要以ajax操作</li>
+			</ol>
+			<h4>缺点</h4>
+			<p>
+			  虽然提供了管理员功能，管理员修改数据的效率不高，每个数据的修改都要有一次ajax表单提交，而且没有实现搜索结果分页机制。而且并没有使用Array这种数据库中的数据类型来存储用户所借书籍。
+			  而是通过程序外部更多的逻辑操作来达成功能。
+			  不过这些都不难实现，关于修改功能的ideal方案是利用paramsgrid（一个表格插件）来提供用户修改交互，之后js收集用户的修改post到服务器端。
+			  分页实现也不难。
+
+			</p>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	{{end}}

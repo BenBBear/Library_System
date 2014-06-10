@@ -1,0 +1,68 @@
+package handlers
+
+import (
+	db "./model"
+	ml "./mylib"
+	"fmt"
+	"log"
+	"net/http"
+	"os"
+	"text/template"
+)
+
+var (
+	tmpl, _ = template.ParseFiles("./gotemplate/header.gtpl", "./gotemplate/search.gtpl", "./gotemplate/illegalform.gtpl", "./gotemplate/index.gtpl",
+		"./gotemplate/footer.gtpl", "./gotemplate/searchresult.gtpl")
+	logfile, logerr = os.OpenFile("../log/test.log", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
+	logger          = log.New(logfile, "\r\n", log.Ldate|log.Ltime|log.Llongfile)
+)
+
+func SearchBook(w http.ResponseWriter, r *http.Request) {
+	tmpl.ExecuteTemplate(w, "search", nil)
+}
+
+func Index(w http.ResponseWriter, r *http.Request) {
+	tmpl.ExecuteTemplate(w, "index", nil)
+	//	fmt.Fprintf(w, "hel", nil)
+}
+
+//==============================================search result========================
+func SearchResult(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
+	if len(r.Form["bookname"][0]) == 0 {
+		if len(r.Form["bookid"][0]) == 0 {
+			tmpl.ExecuteTemplate(w, "illegalform", nil)
+			return
+		}
+		rows, err := db.MyDB.Query("SELECT * FROM books WHERE bookid = $1", r.Form["bookid"][0])
+		ml.CheckErr(err, logger)
+		db.ParseSql_Result(rows, w, tmpl)
+		return
+	}
+	rows, err := db.MyDB.Query("SELECT * FROM books WHERE bookid = $1 and bookname = $2", r.Form["bookid"][0], r.Form["bookname"][0])
+	ml.CheckErr(err, logger)
+	db.ParseSql_Result(rows, w, tmpl)
+
+}
+
+//===================================css&js================================
+func Jquery(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, ml.Jquery, nil)
+}
+func Bootstrap_min_js(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, ml.Bootstrap_minjs, nil)
+}
+func Bootstrap_min_css(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, ml.Bootstrap_mincss, nil)
+}
+func Bootstrap_responsive_min_css(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, ml.Response_css, nil)
+}
+func EndGame() {
+	logfile.Close()
+	db.DbEnd()
+}
+
+func init() {
+	ml.CheckErr(logerr, logger)
+}

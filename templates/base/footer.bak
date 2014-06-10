@@ -1,0 +1,19 @@
+{{define "footer"}}
+<br /><br />
+	<div class="bs-footer">
+      <div class="container">
+		<div class="alert alert-info">姓名：张鑫语 学号：PB11210105&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		  <a href="/admin"><button class="ui-button-danger ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only ui-state-hover ui-state-active ui-state-focus" role="button" aria-disabled="false"><span class="ui-button-text">管理员页面</span></button></a>
+		</div>
+      </div>
+	</div>
+	<script src="http://jquery-ui-bootstrap.github.io/jquery-ui-bootstrap/assets/js/vendor/jquery-1.9.1.min.js" type="text/javascript"></script>
+	<script src="Pack/assets/js/vendor/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+	<script src="Pack/assets/js/vendor/bootstrap.js" type="text/javascript"></script>
+	<script src="Pack/assets/js/vendor/holder.js" type="text/javascript"></script>
+	<script src="http://jquery-ui-bootstrap.github.io/jquery-ui-bootstrap/assets/js/vendor/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+	<script src="http://jquery-ui-bootstrap.github.io/jquery-ui-bootstrap/assets/js/google-code-prettify/prettify.js" type="text/javascript"></script>
+	<script src="Pack/js/custom.js" type="text/javascript"></script>
+  </body>
+</html>
+{{end}}

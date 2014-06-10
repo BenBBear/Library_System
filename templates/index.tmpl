@@ -1,0 +1,85 @@
+{{define "index"}}
+{{template "header"}}
+<header class="bs-header" id="overview" >
+  <div class="container" id="big-header">
+	<h1>熊熊的图书馆</h1>
+    <p class="lead">简易，HomeBrewd，所以 Don't be so Serious</p>
+  </div>
+</header>
+<br /><br />
+<div class="container">
+  <div class="row">
+	<div class="col-xs-4">
+	  <div class="thumbnail">
+		<img data-src="holder.js/300x200" alt="...">
+		<div class="caption">
+		  <h3>用户注册</h3>
+		  <a href="signup/" target="_self">
+			<button class="btn btn-primary" role="button"  aria-disabled="false" href="signup/">
+			  <span class="ui-button-text"> Have a Try</span></button></a>
+		</div>
+	  </div>
+	</div>
+	<div class="col-xs-4">
+	  <div class="thumbnail">
+		<img data-src="holder.js/300x200" alt="...">
+		<div class="caption">
+		  <h3>用户登录</h3>
+		  <a href="user_login/">
+			<button class="btn btn-primary" role="button" aria-disabled="false" href="user_login/">
+			  <span class="ui-button-text">Have a Try</span></button></a>
+		</div>
+	  </div>
+	</div>
+	<div class="col-xs-4">
+	  <div class="thumbnail">
+		<img data-src="holder.js/300x200" alt="...">
+		<div class="caption">
+		  <h3>注销登录</h3>
+		  <a href="logout/">
+			<button class="btn btn-primary" role="button" aria-disabled="false" href="logout/">
+			  <span class="ui-button-text">Have a Try</span></button></a>
+
+		</div>
+	  </div>
+	</div>
+  </div>
+  <br /><br />
+  <div class="row">
+	<div class="col-xs-4">
+	  <div class="thumbnail">
+		<img data-src="holder.js/300x200" alt="...">
+		<div class="caption">
+		  <h3>用户主页</h3>
+		  <a href="home/">
+			<button class="btn btn-primary" role="button"  aria-disabled="false" href="home/">
+			  <span class="ui-button-text">Have a Try</span></button></a>
+		</div>
+	  </div>
+	</div>
+	<div class="col-xs-4">
+	  <div class="thumbnail">
+		<img data-src="holder.js/300x200" alt="...">
+		<div class="caption">
+		  <h3>用户搜索</h3>
+		  <a href="home/search">
+			<button class="btn btn-primary" role="button" aria-disabled="false" href="home/search">
+			  <span class="ui-button-text">Have a Try</span></button></a>
+		</div>
+	  </div>
+	</div>
+	<div class="col-xs-4">
+	  <div class="thumbnail">
+		<img data-src="holder.js/300x200" alt="...">
+		<div class="caption">
+		  <h3>匿名搜索</h3>
+		  <a href="/search">
+			<button class="btn btn-primary" role="button" aria-disabled="false" href="/search">
+			  <span class="ui-button-text">Have a Try</span></button></a>
+		</div>
+	  </div>
+	</div>
+  </div>
+</div>
+{{template "footer"}}
+{{end}}

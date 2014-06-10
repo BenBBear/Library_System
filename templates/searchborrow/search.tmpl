@@ -1,0 +1,31 @@
+{{define "search"}}
+{{template "header"}}
+{{template "side"}}
+<div class="col-md-9" role="main">
+  <form action={{.}} method="post" role="form" >
+	<fieldset>
+	  <legend>书籍查找</legend>
+	  <div class="form-group">
+		<label for="username">书名</label>
+		<input type="text" name="bookname" id="username">
+	  </div>
+	  <div class="form-group">
+		<label for="booknumber">书号</label>
+		<input type="text" name="bookid" id="password">
+	  </div>
+	  <input type="submit" value="查找" class="btn btn-primary">
+	</fieldset>
+  </form>
+</div>
+<br /> <br /> <br /> <br /> <br /> <br />
+<br/>        <br/>        <br/>        <br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+{{template "divfooter"}}
+{{template "footer"}}
+{{end}}

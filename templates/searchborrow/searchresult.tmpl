@@ -1,0 +1,27 @@
+{{define "search_result"}}
+{{template "header"}}
+{{template "side"}}
+<div class="col-md-9" role="main">
+  <div class="panel panel-success">
+	<div class="panel-heading">
+	  <h2 class="panel-title">搜索结果</h2>
+	</div>
+	<br /><br />
+	<div class="panel-body">
+	  <div class="alert alert-warning"><p id="reply">你还不是用户，不能借书，只能查询</p></div>
+	  {{range .}}
+		<ul class="list-group">
+
+		  <li class="list-group-item">书名：{{.Bookname}}</li>
+		  <li class="list-group-item">书ID号：{{.Bookid}}</li>
+		  <li class="list-group-item">剩余数量：{{.Left_num}}</li>
+
+		</ul>
+	  {{end}}
+	</div>
+  </div>
+</div>
+
+{{template "divfooter"}}
+{{template "footer"}}
+{{end}}

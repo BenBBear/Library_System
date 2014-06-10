@@ -1,0 +1,44 @@
+{{define "admin_edit"}}
+{{template "header"}}
+{{template "side"}}
+<div class="col-md-9" role="main">
+  <div class="panel panel-success">
+	<div class="panel-heading">
+	  <h2 class="panel-title">搜索结果</h2>
+	</div>
+	<br /><br />
+	<div class="panel-body">
+	  <div class="alert alert-warning"><p id="reply"></p></div>
+	  {{range .}}
+		<form method="post" id={{.Bookid}}  action="goedit/" role="form" class="form-inline ajax">
+		  <div class="form-group">
+			<label for="Bookname">书名&nbsp;&nbsp;&nbsp;</label>
+			<input type="text" name="bookname" value={{.Bookname}}>
+		  </div>
+		  <div class="form-group">
+			<label for="Bookid">书ID&nbsp;&nbsp;&nbsp;</label>
+			<input type="text" name="bookid" value={{.Bookid}} disable>
+		  </div>
+		  <div class="form-group">
+			<label for="Bookleft">书库存</label>
+			<input type="text" name="left_num" value={{.Left_num}} >
+		  </div>
+		  <input type="checkbox" name="delete" value="delete">删除此书
+		  <input type="submit" name="edit" value="提交修改"  class="btn btn-danger">
+		</form>
+	  {{end}}
+	</div>
+  </div>
+</div>
+<br /> <br /> <br /> <br /> <br /> <br />
+<br/>        <br/>        <br/>        <br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+{{template "divfooter"}}
+{{template "footer"}}
+{{end}}

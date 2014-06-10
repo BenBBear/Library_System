@@ -1,0 +1,34 @@
+{{define "admin_add"}}
+{{template "header"}}
+{{template "side"}}
+<div class="col-md-9" role="main">
+  <form method="post" id="add_form" action="goadd/" class="ajax"  role="form">
+	<div class="form-group">
+	  <label for="Bookname">书名&nbsp;&nbsp;&nbsp;</label>
+	  <input type="text" name="bookname" value={{.Bookname}}>
+	</div>
+	<div class="form-group">
+	  <label for="Bookid">书ID&nbsp;&nbsp;&nbsp;</label>
+	  <input type="text" name="bookid" value={{.Bookid}} >
+	</div>
+	<div class="form-group">
+	  <label for="Bookleft">书库存</label>
+	  <input type="text" name="left_num" value={{.Left_num}} >
+	</div>
+	<p>
+	  <input type="submit" name="edit" value="插入此书"  class="btn btn-primary">
+	  <span id="insert"></span></p>
+  </form>
+</div>
+<br /> <br /> <br /> <br /> <br /> <br />
+<br/>        <br/>        <br/>        <br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+{{template "divfooter"}}
+{{template "footer"}}
+{{end}}
